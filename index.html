@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="النص ☜ صوت | Text ☞ Voice - تحويل النص إلى صوت بسهولة" />
+  <title>النص ☜ صوت | Text ☞ Voice</title>
+  <link rel="stylesheet" href="stylo.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">النص ☜ صوت <span>| Text ☞ Voice</span></div>
+    <nav>
+      <button class="nav-btn active" data-tab="studio">الاستوديو</button>
+      <button class="nav-btn" data-tab="history">السجل</button>
+      <button class="nav-btn" data-tab="plans">الخطط</button>
+      <button class="nav-btn" data-tab="about">عن الموقع</button>
+    </nav>
+    <button id="loginBtn" class="login-btn">تسجيل الدخول</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">✦ تحويل النص إلى صوت</div>
+      <h1>حوّل كلماتك إلى <span>صوت</span></h1>
+      <p>اكتب النص، اختر الصوت، ثم اضغط إنشاء الصوت. يعمل الموقع مباشرة من المتصفح بدون أي Build أو TypeScript.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="studio" class="tab-panel active">
+      <div class="card studio-card">
+        <div class="card-head">
+          <div>
+            <h2>استوديو الصوت</h2>
+            <p>أدخل النص الذي تريد تحويله إلى صوت.</p>
+          </div>
+          <div class="counter"><b id="charCount">0</b> / 10000 حرف</div>
+        </div>
+
+        <textarea id="textInput" maxlength="10000" placeholder="اكتب أو الصق النص هنا..."></textarea>
+
+        <div class="controls">
+          <label>الصوت
+            <select id="voiceSelect"><option value="">الصوت الافتراضي</option></select>
+          </label>
+          <label>السرعة
+            <input id="rate" type="range" min="0.5" max="2" step="0.1" value="1" />
+            <output id="rateValue">1.0×</output>
+          </label>
+          <label>حدة الصوت
+            <input id="pitch" type="range" min="0" max="2" step="0.1" value="1" />
+            <output id="pitchValue">1.0</output>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="speakBtn" class="primary">▶ إنشاء وتشغيل الصوت</button>
+          <button id="pauseBtn" class="secondary">Ⅱ إيقاف مؤقت</button>
+          <button id="stopBtn" class="secondary">■ إيقاف</button>
+          <button id="clearBtn" class="ghost">مسح</button>
+        </div>
+        <div id="status" class="status">جاهز لتحويل النص.</div>
+      </div>
+    </section>
+
+    <section id="history" class="tab-panel">
+      <div class="card">
+        <div class="card-head"><div><h2>السجل</h2><p>آخر النصوص التي شغلتها على هذا الجهاز.</p></div></div>
+        <div id="historyList" class="history-list"><div class="empty">لا يوجد سجل حتى الآن.</div></div>
+      </div>
+    </section>
+
+    <section id="plans" class="tab-panel">
+      <div class="plans-grid">
+        <article class="plan card"><h3>مجاني</h3><strong>0</strong><p>للاستخدام الشخصي والتجربة.</p><ul><li>تحويل النص إلى صوت</li><li>حتى 10,000 حرف للنص</li><li>أصوات المتصفح المتاحة</li></ul><button class="primary full" data-tab="studio">ابدأ الآن</button></article>
+        <article class="plan card featured"><div class="plan-tag">مقترح</div><h3>احترافي</h3><strong>قريبًا</strong><p>مزايا إضافية عند تفعيل الخدمة السحابية.</p><ul><li>أصوات أكثر</li><li>إدارة متقدمة للمشاريع</li><li>تصدير صوتي</li></ul><button class="secondary full" id="notifyBtn">إشعار عند الإطلاق</button></article>
+      </div>
+    </section>
+
+    <section id="about" class="tab-panel">
+      <div class="card about"><h2>عن الموقع</h2><p>هذه نسخة ثابتة من أربعة ملفات فقط: <b>README.md</b> و <b>index.html</b> و <b>script.js</b> و <b>stylo.css</b>.</p><p>لا تحتاج إلى Node.js أو TypeScript أو Wrangler. ارفع الملفات كما هي إلى أي استضافة تدعم HTML/CSS/JavaScript.</p></div>
+    </section>
+
+    <section class="share card">
+      <h2>شارك الموقع</h2>
+      <p>انسخ رابط الصفحة بعد نشرها وشاركه مع الآخرين.</p>
+      <button id="shareBtn" class="secondary">↗ مشاركة</button>
+    </section>
+  </main>
+
+  <footer><span>© 2026 النص ☜ صوت | Text ☞ Voice</span><span>نسخة Static — بدون Build Process</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
